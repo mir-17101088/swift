@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER curtis <curtis@serverascode.com>
+MAINTAINER mir
 
 RUN apt-get update
 RUN apt-get install -y supervisor swift python-swiftclient rsync \
