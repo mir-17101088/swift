@@ -5,9 +5,9 @@
 #
 
 # These can be set with docker run -e VARIABLE=X at runtime
-SWIFT_PART_POWER=${SWIFT_PART_POWER:-7}
-SWIFT_PART_HOURS=${SWIFT_PART_HOURS:-1}
-SWIFT_REPLICAS=${SWIFT_REPLICAS:-1}
+SWIFT_PART_POWER=${SWIFT_PART_POWER:3}
+SWIFT_PART_HOURS=${SWIFT_PART_HOURS:1}
+SWIFT_REPLICAS=${SWIFT_REPLICAS:3}
 
 if [ -e /srv/account.builder ]; then
 	echo "Ring files already exist in /srv, copying them to /etc/swift..."
@@ -24,7 +24,7 @@ if [ ! -e /etc/swift/account.builder ]; then
 	cd /etc/swift
 
 	# 2^& = 128 we are assuming just one drive
-	# 1 replica only
+	# 3 replicas only
 
 	echo "No existing ring files, creating them..."
 
